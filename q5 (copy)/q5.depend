@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1516122957 source:/home/jordan/Documents/HPC Assignment B/q5/main.cpp
+	<iostream>
+	<cmath>
+	<fstream>
+

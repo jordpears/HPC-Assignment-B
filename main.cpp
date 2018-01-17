@@ -10,10 +10,10 @@ int main()
 {
     ofstream testingdoc;
     testingdoc.open("testingdoc.csv");
-    int fineness = 1; //measure of how coarse the grid is.
+    int fineness = 200; //measure of how coarse the grid is.
     double h = 1.0/fineness;
     double epsillon = 1;
-    double w = 1.99;
+    double w = 1.5;
     double errorTolerance = 1E-7;
     double old;
     int converged = 0;
@@ -46,17 +46,17 @@ int main()
 
     a = fineness * a;
     b = fineness * b;
-    tempxdes = (fineness * tempxdes)+0.5;
+    tempxdes = (fineness * tempxdes);
     xdes = (int)tempxdes;
-    tempydes = (fineness * tempydes)+0.5;
+    tempydes = (fineness * tempydes);
     ydes = (int)tempydes;
-    tempx1 = (fineness * tempx1)+0.5;
+    tempx1 = (fineness * tempx1);
     x1 = (int)tempx1;
-    tempy1 = (fineness * tempy1)+0.5;
+    tempy1 = (fineness * tempy1);
     y1 = (int)tempy1;
-    tempx2 = (fineness * tempx2)+0.5;
+    tempx2 = (fineness * tempx2);
     x2 = (int)tempx2;
-    tempy2 = (fineness * tempy2)+0.5;
+    tempy2 = (fineness * tempy2);
     y2 = (int)tempy2;
 
 
@@ -69,8 +69,8 @@ int main()
         density[i] = 0.0;
     }
 
-    density[(y1+1)*(a+2)+(x1+1)] = q1/pow(h,2);  //note goes from 0-4 for a,b=5
-    density[(y2+1)*(a+2)+(x2+1)] = q2/pow(h,2);
+    density[(b-y1)*(a+2)+(x1+1)] = q1/pow(h,2);  //note goes from 0-4 for a,b=5
+    density[(b-y2)*(a+2)+(x2+1)] = q2/pow(h,2);
 
     while(converged < (a+2)*(b+2))
     {

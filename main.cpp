@@ -10,7 +10,7 @@ int main()
 {
     ofstream testingdoc;
     testingdoc.open("testingdoc.csv");
-    int fineness = 100; //measure of how coarse the grid is.
+    int fineness = 1; //measure of how coarse the grid is.
     double h = 1.0/fineness;
     double epsillon = 1;
     double w = 1.99;
@@ -38,7 +38,7 @@ int main()
 //    cout << "Input y2: ";
 //    cin >> tempy2;
 
-    a = 4;b=9;q1=1;tempx1=0;tempy1=0;q2=-1;tempx2=3;tempy2=8; //testing
+    //a = 4;b=9;q1=1;tempx1=0;tempy1=0;q2=-1;tempx2=3;tempy2=8; //testing
     a = 4; b = 6; q1 = 1; tempx1 = 3.1415926535897932; tempy1 = 2.7182818284590452; q2 = -2; tempx2 = 1.6180339887487848; tempy2 = 4.6692016091029906; //the problem
 
     tempxdes = 3.0;
@@ -58,8 +58,10 @@ int main()
     x2 = (int)tempx2;
     tempy2 = (fineness * tempy2)+0.5;
     y2 = (int)tempy2;
-    double density[(b+2)*(a+2)];
-    double grid[(b+2)*(a+2)];
+
+
+    double* density = new double[(b+2)*(a+2)];
+    double* grid = new double[(b+2)*(a+2)];
 
     for(int i = 0; i<((b+2)*(a+2)); i++)
     {
